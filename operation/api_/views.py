@@ -24,20 +24,6 @@ class User_data(APIView):
             self.check.save()
             return Response(self.check.data, 200)
         return Response(self.check.data,304)
-    
-    # def put(self,request,client_name):
-    #     self.check = Users.objects.get(name = client_name)
-    #     self.check = Users_serializers(self.check,data=request.data,partial=True)
-    #     if self.check.is_valid():
-    #         self.check.save()
-    #         return Response(self.check.data, 200)
-    #     return Response(self.check.errors,400)
-    
-    # def delete(self,request,client_name):
-    #     self.check = Users.objects.get(name = client_name)
-    #     self.check.delete()
-    #     return Response(status=204)
-
 
 
 class file_data(APIView):
@@ -60,13 +46,6 @@ class file_data(APIView):
             return Response(self.check.data, 200)
         return Response(self.check.data,304)
     
-    
-    # def delete(self,request,client_name):
-    #     self.check = Users.objects.get(name = client_name)
-    #     self.check.delete()
-    #     return Response(status=204)
-    
-    
 
 def upload(request):
     return render(request,'upload_file.html',{'info':"","url":None})
@@ -85,7 +64,6 @@ def check_details(request):
     
     
 def upload_file(request):
-    # try:
     if request.method == 'POST':
         print(request.FILES.get('get_file'))
         file_id = str(uuid.uuid1().int)

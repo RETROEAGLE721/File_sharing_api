@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign Up</title>
+</head>
+<body>
+    <form action="create_user" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" id="" placeholder="Enter Username">
+        <input type="text" name="passw1" id="" placeholder="Enter Password">
+        <input type="text" name="passw2" id="" placeholder="Confirm Password">
+        <input type="submit" value="Sign up">
+    </form>
+    {{ info }}
+</body>
+</html>

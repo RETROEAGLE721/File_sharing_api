@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign in</title>
+</head>
+<body>
+    <form action="check_details" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Enter Username"><br>
+        <input type="text" name="passw" placeholder="Enter password"><br>
+        <input type="submit" value="Sign in"><br>
+        {% if info != "" %}
+        {{ info }}
+        {% endif %}
+    </form>
+</body>
+</html>

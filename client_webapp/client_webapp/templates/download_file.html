@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Download</title>
+</head>
+<body>
+    <form action="downlaod_file" method="post">
+        {% csrf_token %}
+        <input type="text" name="url" id=""><br>
+        <input type="submit" name="" id="" value="Check"><br>
+    </form>
+    {{ error_message }}
+    {% if download != None %}
+    <form action="download_file_2" method="post">
+        {% csrf_token %}
+        <input type="submit" name="" id="" value="Download">
+    </form>
+    {% endif %}
+    {% if info != None %}
+    <p>{{ info }}</p>
+    {% endif %}
+    {% if downlaod_url != None %}
+    <a href="{{ downlaod_url }}" download=" {{ file_name }}">
+        <button>Download</button>
+    </a>
+    {% endif %}
+</body>
+</html>
